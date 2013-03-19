@@ -1,0 +1,7 @@
+package models;
+
+public class Trusted {
+	private int cid1;
+	private int cid2;
+	private boolean isTrusted;
+}

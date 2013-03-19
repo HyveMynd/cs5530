@@ -1,0 +1,6 @@
+package models;
+
+public class Keyword {
+	private String keyword;
+	private long isbn;
+}
