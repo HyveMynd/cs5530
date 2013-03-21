@@ -1,0 +1,9 @@
+package databaseOps;
+
+import java.sql.Statement;
+
+
+public class QueryResult {
+	public String sql = "";
+	public Statement stmt = null;
+}

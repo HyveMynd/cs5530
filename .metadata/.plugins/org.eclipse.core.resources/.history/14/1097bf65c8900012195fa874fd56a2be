@@ -1,0 +1,19 @@
+package models;
+
+public class Inventory {
+	private long isbn;
+	private int copies;
+	
+	public long getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(long isbn) {
+		this.isbn = isbn;
+	}
+	public int getCopies() {
+		return copies;
+	}
+	public void setCopies(int copies) {
+		this.copies = copies;
+	}
+}

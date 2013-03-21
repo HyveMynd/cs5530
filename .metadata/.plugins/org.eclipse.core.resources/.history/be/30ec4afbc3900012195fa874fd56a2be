@@ -1,0 +1,20 @@
+package databaseOps;
+
+public class Insert {
+	private String table;
+	private String stmt;
+	
+	public Insert(String table){
+		this.table = table;
+	}
+	
+	public void columns(){
+		
+	}
+	
+	public void values(String values...){
+		
+	}
+	
+	
+}

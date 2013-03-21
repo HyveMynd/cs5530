@@ -1,0 +1,6 @@
+package models;
+
+public class Inventory implements IDbModel{
+	private long isbn;
+	private int copies;
+}

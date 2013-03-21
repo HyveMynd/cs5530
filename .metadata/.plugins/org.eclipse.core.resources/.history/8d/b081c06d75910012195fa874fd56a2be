@@ -1,0 +1,5 @@
+package databaseOps;
+
+public interface IDbChanges {
+
+}

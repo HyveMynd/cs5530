@@ -1,26 +1,7 @@
 package models;
 
-public class Rate {
-	private int cid;
-	private int fid;
-	private String rating;
-	
-	public int getCid() {
-		return cid;
-	}
-	public void setCid(int cid) {
-		this.cid = cid;
-	}
-	public int getFid() {
-		return fid;
-	}
-	public void setFid(int fid) {
-		this.fid = fid;
-	}
-	public String getRating() {
-		return rating;
-	}
-	public void setRating(String rating) {
-		this.rating = rating;
-	}
+public class Rate implements IDbModel{
+	public int cid;
+	public int fid;
+	public String rating;
 }

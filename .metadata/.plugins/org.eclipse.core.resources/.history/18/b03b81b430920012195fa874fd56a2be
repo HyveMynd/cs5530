@@ -1,0 +1,44 @@
+package cs5530;
+
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
+import java.util.HashMap;
+
+import static com.wagnerandade.coollection.Coollection.*;
+import models.IDbModel;
+import models.Orders;
+import models.Video;
+
+public class OrderOperations {
+
+	public void orderVideos(Statement stmt, String id, String[] videos, String ccNum) {
+		HashMap<String, String> videoOrders = new HashMap<String, String>();
+		ArrayList<Video> vids = new ArrayList<Video>();
+		Calendar now = Calendar.getInstance();
+
+		for (String video : videos){
+			String[] vid = video.split(",");
+			videoOrders.put(vid[0], vid[1]);
+		}
+		
+		try {
+			Collection<IDbModel> collec = new VideoOperations().allVideos(stmt, new Video()).result;
+			for (IDbModel mod : collec){
+				vids.add((Video)mod);
+			}
+			
+			from(vids).where("isbn", eq("a")).
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		Orders order = new Orders();
+		order.ccNum = ccNum;
+		order.total = "";
+		
+	}
+
+}

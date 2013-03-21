@@ -1,19 +1,6 @@
 package models;
 
-public class Director {
-	private String name;
-	private long isbn;
-	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public long getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(long isbn) {
-		this.isbn = isbn;
-	}
+public class Director implements IDbModel{
+	public String name;
+	public long isbn;
 }

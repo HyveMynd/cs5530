@@ -1,0 +1,10 @@
+package models;
+
+import java.sql.Date;
+
+public class PlaceOrder implements IDbModel{
+	public int oid;
+	public int cid;
+	public long isbn;
+	public Date orderDate;
+}

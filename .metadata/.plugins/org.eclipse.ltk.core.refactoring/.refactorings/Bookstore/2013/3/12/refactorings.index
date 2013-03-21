@@ -1,1 +1,37 @@
 1363628118966	Rename type 'Videos'
+1363717885048	Delete element
+1363718218521	Rename type 'Insert'
+1363719362963	Rename type 'InsertInto'
+1363794563146	Delete element
+1363794771517	Delete element
+1363798671113	Rename field 'stmt'
+1363798681753	Rename local variable 'sql'
+1363798690988	Rename field 'sqls'
+1363799255975	Delete element
+1363800691161	Rename field 'results'
+1363802188512	Delete element
+1363831572176	Rename local variable 'customer'
+1363831813460	Rename type 'Register'
+1363831859027	Rename local variable 'customer'
+1363832059292	Rename type 'Customers'
+1363832086394	Rename type 'Videos'
+1363837191659	Delete element
+1363837373093	Delete element
+1363837825424	Rename type 'AddVideo'
+1363837840628	Rename type 'Register'
+1363837867310	Rename local variable 'addVid'
+1363837870765	Rename local variable 'vidOP'
+1363837875926	Rename local variable 'p'
+1363837883155	Rename local variable 'register'
+1363837890334	Rename local variable 'addVid'
+1363842198938	Rename type 'testdriver2'
+1363871576500	Delete element
+1363876189128	Rename local variable 'results'
+1363889770514	Rename local variable 'ret'
+1363890300976	Rename local variable 'queryResult'
+1363890458103	Rename local variable 'results'
+1363890465452	Delete element
+1363890921656	Delete element
+1363890974951	Rename local variable 'results'
+1363891457157	Rename local variable 'rest'
+1363891502496	Rename local variable 'name'

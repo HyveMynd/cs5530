@@ -1,0 +1,52 @@
+package databaseOps;
+
+import java.sql.*;
+
+public class Insert implements DatabaseOp{
+	private String table;
+	private String stmt;
+	private Object[] values;
+	private Object[] columns;
+	private Statement sql;
+	
+	public Insert(Statement sql){
+		this.sql = sql;
+	}
+	
+	public void into(String table){
+		this.table = table;
+	}
+	
+	public void columns(Object... columns){
+		this.columns = columns;
+	}
+	
+	public void values(Object... values){
+		this.values = values;
+	}
+	
+	public void where(){
+		
+	}
+	
+	public  execute() throws SQLException {
+		stmt = "insert into"+table;
+		for (Object column : columns){
+			stmt += column+",";
+		}
+		
+		removeLastComma();
+		
+		for (Object value : values){
+			stmt += value+",";
+		}
+		
+		removeLastComma();
+		return sql.executeQuery(stmt);
+	}
+	
+	private void removeLastComma(){
+		// Remove last comma
+		stmt = stmt.substring(0, stmt.length());
+	}
+}

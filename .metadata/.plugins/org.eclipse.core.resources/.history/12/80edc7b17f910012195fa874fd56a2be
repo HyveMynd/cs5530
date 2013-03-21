@@ -1,0 +1,26 @@
+package databaseOps;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import models.IDbModel;
+
+public class Select extends DatabaseOp{
+
+	private Select(Statement sql, IDbModel table)
+			throws IllegalArgumentException, IllegalAccessException {
+		super(sql, table);
+	}
+	
+	public static Select from(Statement sql, IDbModel table) throws IllegalArgumentException, IllegalAccessException{
+		Select op = new Select(sql, table);
+		return op;
+	}
+
+	public ResultSet execute() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

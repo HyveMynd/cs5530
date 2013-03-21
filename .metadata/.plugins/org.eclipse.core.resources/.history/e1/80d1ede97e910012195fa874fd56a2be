@@ -1,0 +1,27 @@
+package databaseOps;
+
+import java.sql.*;
+
+import models.IDbModel;
+
+public class Insert extends DatabaseOp{
+
+	protected Insert(IDbModel table) throws IllegalArgumentException,
+			IllegalAccessException {
+		super(table);
+	}
+
+	public static Insert from() throws {
+			return op;
+	}
+	
+	public ResultSet execute() throws SQLException {
+		stmt = "insert into "+tableName+" ";
+		
+		stmt += columns()+" ";
+		
+		stmt += "values "+values()+" ";
+		
+		return sql.executeQuery(stmt);
+	}
+}

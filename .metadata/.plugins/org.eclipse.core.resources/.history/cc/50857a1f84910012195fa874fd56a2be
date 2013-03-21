@@ -1,0 +1,36 @@
+package cs5530;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import databaseOps.Insert;
+import databaseOps.QueryResult;
+
+import models.Customer;
+
+public class Register {
+	
+	public String registerUser(Statement stmt, Customer customer) throws Exception{
+		String query;
+		String resultstr="";
+		QueryResult result;
+		ResultSet results;
+		
+				
+		try{
+			result = Insert.from(customer).execute(stmt);
+			results = result.resultSet;
+			query = result.sql;
+        } catch(Exception e) {
+			System.err.println("Unable to execute query");
+	                System.err.println(e.getMessage());
+			throw(e);
+		}
+		System.out.println("Order:getOrders query="+query+"\n");
+		while (results.next()){
+			resultstr += "<b>"+results.getString("login")+"</b> purchased "+results.getInt("quantity") +
+							" copies of &nbsp'<i>"+results.getString("title")+"'</i><BR>\n";	
+		}
+		return resultstr;
+	}
+}

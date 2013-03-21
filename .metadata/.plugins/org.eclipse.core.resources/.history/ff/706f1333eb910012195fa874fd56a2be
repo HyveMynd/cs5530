@@ -1,0 +1,23 @@
+package cs5530;
+
+import java.util.Calendar;
+import java.util.HashMap;
+
+import models.Orders;
+
+public class OrderOperations {
+
+	public void orderVideos(String id, String[] videos, String ccNum) {
+		HashMap<String, String> videoOrders = new HashMap<String, String>();
+		for (String video : videos){
+			String[] vid = video.split(",");
+			videoOrders.put(vid[0], vid[1]);
+		}
+		Calendar now = Calendar.getInstance();
+		Orders order = new Orders();
+		order.ccNum = ccNum;
+		order.total = "";
+		
+	}
+
+}

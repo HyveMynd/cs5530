@@ -1,0 +1,38 @@
+package databaseOps;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import models.IDbModel;
+
+public class Select<T extends IDbModel> extends DatabaseOp<T>{
+
+	protected Select(T table) throws IllegalArgumentException,
+			IllegalAccessException, InstantiationException {
+		super(table);
+	}
+	
+	public static <T extends IDbModel> Select<T> from(T table) throws IllegalArgumentException, IllegalAccessException, InstantiationException{
+		return new Select<T>(table);
+	}
+
+	@Override
+	public QueryResult execute(Statement stmt) throws SQLException {
+		sql = "select * from "+tableName+" "+whereStr;
+		
+		
+		
+		//save results
+		QueryResult result = new QueryResult();
+		result.sql = sql;
+		ResultSet asd = stmt.executeQuery(sql);
+		
+		result.stmt = stmt;
+		return result;
+	}
+
+	private T saveResults<T>(){
+		return null;
+	}
+}

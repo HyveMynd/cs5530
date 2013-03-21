@@ -1,0 +1,33 @@
+package databaseOps;
+
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import models.IDbModel;
+
+public class Update extends DatabaseOp{
+
+	private Update(IDbModel table)
+			throws IllegalArgumentException, IllegalAccessException {
+		super(table);
+	}
+
+	public static Update set(Statement sql, IDbModel table) throws IllegalArgumentException, IllegalAccessException, SQLException{
+		return new Update(table);
+	}
+
+	@Override
+	public QueryResult execute(Statement stmt) throws SQLException {
+		sql = "update "+tableName+" set ";
+		
+		sql += columns()+" ";
+		
+		sql += "values "+values()+" ";
+		
+		//save results
+		QueryResult result = new QueryResult();
+		result.sql = sql;
+		result.resultSet = stmt.executeQuery(sql);
+		return result;
+	}
+}

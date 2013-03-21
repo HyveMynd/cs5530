@@ -1,0 +1,14 @@
+package databaseOps;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Update implements DatabaseOp{
+	
+	@Override
+	public ResultSet execute() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

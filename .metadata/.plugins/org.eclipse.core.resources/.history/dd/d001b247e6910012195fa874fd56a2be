@@ -1,0 +1,18 @@
+package cs5530;
+
+import java.util.HashMap;
+
+public class OrderOperations {
+
+	public void orderVideos(String id, String[] videos, String ccNum) {
+		HashMap<String, String> videoOrders = new HashMap<String, String>();
+		for (String video : videos){
+			String[] vid = video.split(",");
+			videoOrders.put(vid[0], vid[1]);
+		}
+		
+		
+		
+	}
+
+}

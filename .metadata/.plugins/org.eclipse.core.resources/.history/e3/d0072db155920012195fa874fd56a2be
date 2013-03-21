@@ -1,0 +1,84 @@
+package cs5530;
+
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+
+import models.IDbModel;
+import models.Video;
+import databaseOps.Insert;
+import databaseOps.QueryResult;
+import databaseOps.Select;
+
+public class VideoOperations {
+	
+	public String addVideo(Statement stmt, Video video) throws Exception{
+		String query = "";
+		String resultstr="";
+		QueryResult result;
+		ResultSet results;
+				
+		try{
+			result = Insert.from(video).execute(stmt);
+			results = result.stmt.getResultSet();
+			query = result.sql;
+        } catch(Exception e) {
+			System.err.println("Unable to execute query: "+ query);
+	                System.err.println(e.getMessage());
+			throw(e);
+		}
+		System.out.println("Videos: addVideo query="+query+"\n");
+		resultstr = "Successfully added video. Resutlts: "+results;
+		return resultstr;
+	}
+	
+	public OperationResult allVideos(Statement stmt, Video video) throws Exception{
+		String query = "";
+		String resultstr="";
+		QueryResult<Video> result;
+		ResultSet resultSet;
+		//OperationResult opResult = new OperationResult();
+		//opResult.result = new ArrayList<IDbModel>();
+		Collection<Video> list;
+		
+		try{
+			result = Select.from(video).execute(stmt);
+			list = result.queryResults;
+			//resultSet = result.stmt.getResultSet();
+			query = result.sql;
+        } catch(Exception e) {
+			System.err.println("Unable to execute query: "+ query);
+	                System.err.println(e.getMessage());
+			throw(e);
+		}
+		System.out.println("Videos: allVideo query="+query+"\n");
+		//while (resultSet.next()){
+		for (Iterator<Video> it = list.iterator(); it.hasNext();){
+			Video vid = it.next();
+			
+			
+			vid.ISBN = resultSet.getString("ISBN");
+			vid.Title = resultSet.getString("Title");
+			vid.Subject = resultSet.getString("Subject");
+			vid.Rating = resultSet.getString("Rating");
+			vid.Price = resultSet.getString("Price");
+			vid.Format = resultSet.getString("Format");
+			vid.YearOfProduction = resultSet.getString("YearOfProduction");
+			opResult.result.add(video);
+			
+			resultstr += 
+					"ISBN: "+vid.ISBN+"\n"+
+					"Title: "+vid.Title+"\n"+
+					"Subject: "+vid.Subject+"\n"+
+					"Rating: "+vid.Rating+"\n"+
+					"Price: "+vid.Price+"\n"+
+					"Format: "+vid.Format +"\n"+
+					"Year of Poduction: "+ vid.YearOfProduction+"\n\n";
+		}
+		
+		opResult.resultStr = resultstr;
+		return opResult;
+	}
+}

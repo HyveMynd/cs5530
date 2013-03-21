@@ -1,0 +1,8 @@
+package cs5530;
+
+import models.IDbModel;
+
+public class OperationResult {
+	public IDbModel result;
+	public String resultStr;
+}

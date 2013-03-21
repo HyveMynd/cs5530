@@ -1,0 +1,53 @@
+package databaseOps;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import models.IDbModel;
+
+public class Insert implements DatabaseOp{
+	private IDbModel table;
+	private String stmt;
+	private ArrayList<Object> values;
+	private ArrayList<String> columns;
+	private Statement sql;
+	
+	public Insert(Statement sql){
+		this.sql = sql;
+	}
+	
+	public void into(IDbModel table){
+		this.table = table;
+	}
+	
+	public void columns(Collection<? extends String> columns) {
+		this.columns.addAll(columns);
+	}
+
+	public void values(Collection<?> values){
+		this.values.addAll(values);
+	}
+	
+	public ResultSet execute() throws SQLException {
+		stmt = "insert into"+table;
+		
+		for (Object column : columns){
+			stmt += column+",";
+		}
+		
+		removeLastComma();
+		
+		for (Object value : values){
+			stmt += value+",";
+		}
+		
+		removeLastComma();
+		return sql.executeQuery(stmt);
+	}
+	
+	private void removeLastComma(){
+		// Remove last comma
+		stmt = stmt.substring(0, stmt.length());
+	}
+}
