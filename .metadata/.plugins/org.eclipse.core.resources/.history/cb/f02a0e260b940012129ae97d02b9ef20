@@ -1,0 +1,10 @@
+package models;
+
+
+public class PlaceOrder implements IDbModel{
+	public String oid;
+	public String cid;
+	public String ISBN;
+	public String OrderDate;
+	public String VideoCount;
+}

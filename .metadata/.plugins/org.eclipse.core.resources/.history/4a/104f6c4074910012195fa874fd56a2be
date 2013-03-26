@@ -1,8 +1,0 @@
-package databaseOps;
-
-import java.sql.*;
-
-public interface DatabaseOp {	
-	protected DatabaseOp op;
-	public abstract ResultSet execute() throws SQLException;
-}

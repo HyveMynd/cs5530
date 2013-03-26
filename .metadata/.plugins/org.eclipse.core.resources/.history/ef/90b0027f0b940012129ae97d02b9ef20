@@ -1,0 +1,9 @@
+package models;
+
+public class Trusted implements IDbModel{
+	public int cidFrom;
+	public int cidTo;
+	public boolean IsTrusted;
+	
+	
+}

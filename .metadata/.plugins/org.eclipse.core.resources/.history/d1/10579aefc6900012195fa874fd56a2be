@@ -1,6 +1,0 @@
-package databaseOps;
-
-public interface DatabaseOp {
-	public abstract void execute();
-	public abstract void where();
-}

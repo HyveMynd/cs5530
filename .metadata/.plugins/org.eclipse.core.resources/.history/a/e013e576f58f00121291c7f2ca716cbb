@@ -1,6 +1,0 @@
-package models;
-
-public class Inventory {
-	private long isbn;
-	private int copies;
-}

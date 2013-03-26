@@ -1,0 +1,7 @@
+package models;
+
+public class Rates implements IDbModel{
+	public int cid;
+	public int fid;
+	public String rating;
+}

@@ -1,0 +1,11 @@
+package models;
+
+public class Inventory implements IDbModel{
+	public String isbn;
+	public String copies;
+	
+	public String toString(){
+		return "ISBN: " + isbn + "\n" +
+				"Copies: " + copies + "\n";
+	}
+}

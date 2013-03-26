@@ -1,0 +1,26 @@
+package cs5530;
+
+import java.sql.Statement;
+import java.util.Collection;
+import java.util.HashMap;
+
+import databaseOps.Select;
+
+import models.Video;
+
+public class OrderOperations {
+
+	public void orderVideos(Statement stmt, String id, String[] videos,
+			String ccNum) throws Exception {
+		
+		// Map representing video, quantity
+		HashMap<String, String> selections = new HashMap<String, String>();
+		for (String video : videos){
+			String[] selection = video.split(",");
+			selections.put(selection[0], selection[1]);
+		}
+		Video video = new Video();
+		Collection<Video> selectedVideos = Select.from(video).execute(stmt).queryResults;
+	}
+
+}

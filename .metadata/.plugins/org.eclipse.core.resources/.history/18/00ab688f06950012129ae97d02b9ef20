@@ -1,0 +1,18 @@
+package models;
+
+import java.sql.Date;
+
+public class Feedback implements IDbModel{
+	public int cid;
+	public String isbn;
+	public String score;
+	public Date date;
+	public String comment;
+	
+	public String toString(){
+		return "Customer Id: " + cid + "\n" +
+				"ISBN: " + isbn + "\n" +
+				"Score: " + score + "\n" +
+				"Date: " + date.toString() + "\n\n";
+	}
+}

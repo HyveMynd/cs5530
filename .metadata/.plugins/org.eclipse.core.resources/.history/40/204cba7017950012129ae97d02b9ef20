@@ -1,0 +1,6 @@
+package models;
+
+public class Director implements IDbModel{
+	public String Name;
+	public long ISBN;
+}

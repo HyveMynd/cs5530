@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.TreeMap"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="databaseOps.DatabaseOp"/>
+<fullyQualifiedTypeName name="databaseOps.Update"/>
 <fullyQualifiedTypeName name="models.Customer"/>
+<fullyQualifiedTypeName name="cs5530.Videos"/>
+<fullyQualifiedTypeName name="cs5530.VideoOperations"/>
+<fullyQualifiedTypeName name="cs5530.OperationResult"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Field"/>
+<fullyQualifiedTypeName name="models.IDbModel"/>
+<fullyQualifiedTypeName name="models.Video"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="databaseOps.Insert"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="models.Orders"/>
+<fullyQualifiedTypeName name="cs5530.OrderOperations"/>
+<fullyQualifiedTypeName name="models.PlaceOrder"/>
+<fullyQualifiedTypeName name="cs5530.CustomerOperations"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="cs5530.User"/>
+<fullyQualifiedTypeName name="databaseOps.Select"/>
+<fullyQualifiedTypeName name="databaseOps.OP"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="models.Inventory"/>
+<fullyQualifiedTypeName name="models.Feedback"/>
+<fullyQualifiedTypeName name="models.Rates"/>
+<fullyQualifiedTypeName name="models.Trusted"/>
+<fullyQualifiedTypeName name="cs5530.Options"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="databaseOps.QueryResult"/>
 </qualifiedTypeNameHistroy>

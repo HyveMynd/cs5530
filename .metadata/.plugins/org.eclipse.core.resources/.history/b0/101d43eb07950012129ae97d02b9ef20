@@ -1,0 +1,13 @@
+package models;
+
+public class Rates implements IDbModel{
+	public String cid;
+	public String fid;
+	public String rating;
+	
+	public String toString(){
+		return "Customer Id: " + cid + "\n" +
+				"Feedback Id: " + fid + "\n" +
+				"Rating: " + rating + "\n\n";
+	}
+}

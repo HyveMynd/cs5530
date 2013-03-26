@@ -1,0 +1,39 @@
+package cs5530;
+
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Iterator;
+
+import databaseOps.OP;
+import databaseOps.Select;
+
+import models.Video;
+
+public class OrderOperations {
+
+	public void orderVideos(Statement stmt, String id, String[] videos,
+			String ccNum) throws Exception {
+		
+		// Map representing video, quantity
+		HashMap<String, String> selections = new HashMap<String, String>();
+		
+		for (String video : videos){
+			String[] selection = video.split(",");
+			selections.put(selection[0], selection[1]);
+		}
+		Video video = new Video();
+		double total = 0;
+		ArrayList<Video> selectedVideos = new ArrayList<Video>();
+		for (Iterator<String> it = selections.keySet().iterator(); it.hasNext();){
+			Collection<Video> vid = Select.from(video)
+					.where("ISBN", OP.Equal, it.next())
+					.execute(stmt).queryResults;
+			selectedVideos.add(vid.iterator().next());
+		}
+		
+		
+	}
+
+}
