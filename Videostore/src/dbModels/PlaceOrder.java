@@ -1,0 +1,20 @@
+package dbModels;
+
+import databaseOps.IDbModel;
+
+
+public class PlaceOrder implements IDbModel{
+	public int oid;
+	public int cid;
+	public String ISBN;
+	public String OrderDate;
+	public String VideoCount;
+	
+	public String toString(){
+		return "Order Id: " + oid + "\n" +
+				"Customer Id: " + cid + "\n" +
+				"ISBN: " + ISBN + "\n" +
+				"Order Date: " + OrderDate + "\n" +
+				"Video Count: " + VideoCount + "\n\n";
+	}
+}

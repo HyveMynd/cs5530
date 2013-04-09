@@ -5,19 +5,19 @@ import java.sql.Statement;
 import java.util.Collection;
 import java.util.HashMap;
 
-import models.Customer;
-import models.Feedback;
-import models.Inventory;
-import models.Orders;
-import models.PlaceOrder;
-import models.Rates;
-import models.Trusted;
-import models.Video;
 import databaseOps.Insert;
 import databaseOps.OP;
 import databaseOps.QueryResult;
 import databaseOps.Select;
 import databaseOps.Update;
+import dbModels.Customer;
+import dbModels.Feedback;
+import dbModels.Inventory;
+import dbModels.Orders;
+import dbModels.PlaceOrder;
+import dbModels.Rates;
+import dbModels.Trusted;
+import dbModels.Video;
 
 public class Options {
 	public static QueryResult<Customer> registerUser(Statement stmt, Customer customer) throws Exception{

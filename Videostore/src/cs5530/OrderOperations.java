@@ -5,9 +5,9 @@ import java.util.Collection;
 
 import databaseOps.OP;
 import databaseOps.Select;
+import dbModels.Orders;
+import dbModels.PlaceOrder;
 
-import models.Orders;
-import models.PlaceOrder;
 
 public class OrderOperations {
 	

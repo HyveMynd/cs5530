@@ -1,6 +1,0 @@
-package models;
-
-public class Director implements IDbModel{
-	private String name;
-	private long isbn;
-}

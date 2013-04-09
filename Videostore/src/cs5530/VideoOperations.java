@@ -3,9 +3,9 @@ package cs5530;
 import java.sql.Statement;
 import java.util.Collection;
 
-import models.Video;
 import databaseOps.QueryResult;
 import databaseOps.Select;
+import dbModels.Video;
 
 public class VideoOperations {
 	

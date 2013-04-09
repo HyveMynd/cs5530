@@ -3,7 +3,8 @@ package cs5530;
 import java.util.Collection;
 import java.util.Iterator;
 
-import models.IDbModel;
+import databaseOps.IDbModel;
+
 
 
 public class Helper {

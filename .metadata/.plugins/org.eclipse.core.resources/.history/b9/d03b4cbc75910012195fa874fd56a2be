@@ -1,9 +1,0 @@
-package databaseOps;
-
-import java.util.Collection;
-import java.util.TreeMap;
-
-public interface IDbChanges {
-	Collection<String>	columns();
-	Collection<String>	values();
-}

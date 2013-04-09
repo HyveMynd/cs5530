@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import models.IDbModel;
 
 public class Select<T extends IDbModel> extends DatabaseOp<T>{
 

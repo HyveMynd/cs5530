@@ -1,8 +1,0 @@
-package models;
-
-
-public class Orders implements IDbModel{
-	public long ccNum;
-	public double total;
-	
-}

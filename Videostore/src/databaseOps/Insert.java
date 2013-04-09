@@ -2,7 +2,6 @@ package databaseOps;
 
 import java.sql.*;
 
-import models.IDbModel;
 
 public class Insert<T extends IDbModel> extends DatabaseOp<T>{
 

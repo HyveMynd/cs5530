@@ -8,11 +8,12 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-import models.Customer;
-import models.Video;
+import databaseOps.Connector;
 import databaseOps.OP;
 import databaseOps.QueryResult;
 import databaseOps.Select;
+import dbModels.Customer;
+import dbModels.Video;
 
 public class Start {
 

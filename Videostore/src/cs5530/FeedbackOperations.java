@@ -3,11 +3,11 @@ package cs5530;
 import java.sql.Statement;
 import java.util.Collection;
 
-import models.Feedback;
-import models.Rates;
-import models.Trusted;
 import databaseOps.OP;
 import databaseOps.Select;
+import dbModels.Feedback;
+import dbModels.Rates;
+import dbModels.Trusted;
 
 public class FeedbackOperations {
 	public static Collection<Feedback> getFeedbackForCustomer(Statement stmt, String id) throws Exception{

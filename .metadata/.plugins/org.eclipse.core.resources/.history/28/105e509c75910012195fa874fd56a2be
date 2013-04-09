@@ -1,8 +1,0 @@
-package databaseOps;
-
-import java.util.TreeMap;
-
-public interface IDbChanges {
-	TreeMap<String, String> changes = new TreeMap<String, String>();
-
-}

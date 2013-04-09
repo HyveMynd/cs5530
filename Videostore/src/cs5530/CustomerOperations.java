@@ -3,9 +3,9 @@ package cs5530;
 import java.sql.Statement;
 import java.util.Collection;
 
-import models.Customer;
 import databaseOps.OP;
 import databaseOps.Select;
+import dbModels.Customer;
 
 public class CustomerOperations {
 	

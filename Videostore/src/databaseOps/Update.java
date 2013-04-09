@@ -3,7 +3,6 @@ package databaseOps;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import models.IDbModel;
 
 public class Update<T extends IDbModel> extends DatabaseOp<T>{
 

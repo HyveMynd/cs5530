@@ -4,7 +4,6 @@ import java.lang.reflect.Field;
 import java.sql.*;
 import java.util.TreeMap;
 
-import models.IDbModel;
 
 public abstract class DatabaseOp<T extends IDbModel>{
 	protected T table;

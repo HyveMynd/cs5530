@@ -4,7 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Collection;
 
-import models.IDbModel;
 
 
 public class QueryResult<T extends IDbModel> {

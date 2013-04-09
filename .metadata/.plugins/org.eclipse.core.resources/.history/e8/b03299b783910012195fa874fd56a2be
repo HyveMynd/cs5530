@@ -1,8 +1,0 @@
-package databaseOps;
-
-import java.sql.ResultSet;
-
-interface QueryResult {
-	String sql = "";
-	ResultSet results = null;
-}
