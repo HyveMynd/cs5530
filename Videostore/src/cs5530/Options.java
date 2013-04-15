@@ -54,11 +54,14 @@ public class Options {
 			trustedInfo = FeedbackOperations.getTrustedForCustomer(stmt, id);
 			
 			//Get the video names
-			String vidNames = "";
-			for (PlaceOrder po : placeOrderInfo)
+			String vidNames = "<h2>Video:</h2>";
+			for (PlaceOrder po : placeOrderInfo){
+				vidNames += "<h3>";
 				vidNames += Select.from(new Video()).where("ISBN", OP.Equal, po.ISBN).execute(stmt)
 						.firstOrDefault().Title + ",";
-			vidNames += "\n\n";
+				vidNames += "</h3>";
+			}
+			vidNames += "<br>";
 			
 			resultstr = custInfo.toString();
 			resultstr += Helper.tablesToString(placeOrderInfo);
@@ -174,7 +177,7 @@ public class Options {
 	}
 
 	public static String addRating(Statement stmt, int id, int fid,
-			int rating) throws Exception{
+			String rating) throws Exception{
 		Rates rates = Select.from(new Rates()).where("cid", OP.Equal, id).execute(stmt).firstOrDefault();
 		if (rates != null && rates.cid == id)
 			return "Cannot rate your own feedback";
@@ -208,20 +211,16 @@ public class Options {
 		return "Successfully added trusted rating!";
 	}
 
-	public static String movieSearch(Statement stmt, String search, int order) throws Exception{
-		String[] searchCrit = search.split(",");
+	public static String movieSearch(Statement stmt, int order,
+			String actor, String director, String title, String rating,
+			String op1, String op2, String op3) throws Exception{
 		String sql = "select f.*, a.*, r.*, " +
 				"t.isTrusted from Video a, Rates r, Feedback f, Trusted t " +
-				"where f.ISBN=a.ISBN and f.cid = r.cid and t.cidTo = r.cid or ";
-				
-		if (!searchCrit[0].isEmpty())
-			sql += "a.ActorName like '%" + searchCrit[0] + "%' ";
-		if(!searchCrit[1].isEmpty())
-			sql += "a.Director like '%" + searchCrit[1] + "%' ";
-		if(!searchCrit[2].isEmpty())
-			sql += "a.Title like '%" + searchCrit[2] + "%' ";
-		if(!searchCrit[3].isEmpty())
-			sql += "r.Rating like '%" + searchCrit[3] + "%' ";
+				"where f.ISBN=a.ISBN and f.cid = r.cid and t.cidTo = r.cid or " +
+				"a.ActorName like '%" + actor + "%' " + op1 + " " +
+				"a.Director like '%" + director + "%' " + op2 + " " +
+				"a.Title like '%" + title + "%' " + op3 + " " +
+				"r.Rating like '%" + rating + "%' ";
 		
 		switch(order){
 		case 1:
@@ -242,7 +241,7 @@ public class Options {
 
 	public static String searchMostUseful(Statement stmt, String isbn, int count) throws Exception{
 		Feedback feedback = Select.from(new Feedback()).where("ISBN", OP.Equal, isbn).execute(stmt).firstOrDefault();
-		String sql = "select from Rates where fid = "+feedback.ID+" order by avg(rating) desc";
+		String sql = "select * from Rates where fid = "+feedback.ID+" order by avg(rating) desc";
 		QueryResult<Rates> results = Select.from(new Rates()).execute(stmt, sql);
 		String ret = Helper.tablesToString(results.queryResults, count);
 		return ret;

@@ -1,0 +1,28 @@
+package dbModels;
+
+import databaseOps.IDbModel;
+
+public class Video implements IDbModel{
+	public String ISBN;
+	public String Title;
+	public String Subject;
+	public String Rating;
+	public String Price;
+	public String Format;
+	public String YearOfProduction;
+	public String ActorName;
+	public String Director;
+	
+	?
+	
+	public String toString(){
+		return	"<h2>Video:</h2>" +
+				"<h3>ISBN: "+ISBN+"</h3>"+
+				"<h3>Title: "+Title+"</h3>"+
+				"<h3>Subject: "+Subject+"</h3>"+
+				"<h3>Rating: "+Rating+"</h3>"+
+				"<h3>Price: "+Price+"</h3>"+
+				"<h3>Format: "+Format +"</h3>"+
+				"<h3>Year of Poduction: "+ YearOfProduction+"</h3><br>";
+	}
+}

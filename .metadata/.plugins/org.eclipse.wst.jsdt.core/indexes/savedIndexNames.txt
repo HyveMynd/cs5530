@@ -1,3 +1,6 @@
-INDEX VERSION 1.122+/Users/andresmonroy/Documents/GitHub/cs5530/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
-958650501.index
-1926452842.index
+INDEX VERSION 1.122+X:\Documents\GitHub\cs5530\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1593350847.index
+1445344787.index
+839738492.index
+2938981915.index
+2996996910.index

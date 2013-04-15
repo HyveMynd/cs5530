@@ -6,16 +6,14 @@
 </head>
 
 <body>
-<a href="orders.sql">orders.sql</a><br>
-<a href="orders.jsp">orders.jsp</a><br>
-<a href="register.jsp">Register</a><br>
-<a href="ordering.jsp">Order</a><br>
+<a href="addnewmovie.jsp">Add New Movie</a><br>
+<a href="ordering.jsp">Make an Order</a><br>
 <a href="userrecord.jsp">Display User Record</a><br>
-<a href="newmovie.jsp">Add New Movie</a><br>
-<a href="addtoinventory.jsp">Add Movie to Inventory</a><br>
+<a href="addtoinv.jsp">Add to Inventory</a><br>
 <a href="recordfeedback.jsp">Record Feedback</a><br>
 <a href="usefulnessrating.jsp">Add Usefulness To Rating</a><br>
-<a href="buyingsuggestions.jsp">Show Buying Suggestions</a><br>
+<a href="mostuseful.jsp">Most Useful Feedback</a><br>
+<a href="searchmovies.jsp">Search Movies</a><br>
 <a href="degrees.jsp">Two Degrees of Separation</a><br>
 <a href="statistics.jsp">Show Statistics</a><br>
 <a href="userawards.jsp">User Awards</a><br>

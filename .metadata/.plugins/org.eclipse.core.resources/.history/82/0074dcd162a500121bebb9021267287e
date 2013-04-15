@@ -1,0 +1,14 @@
+package dbModels;
+
+import databaseOps.IDbModel;
+
+public class Inventory implements IDbModel{
+	public String ISBN;
+	public String copies;
+	
+	public String toString(){
+		return "<h2>Inventory:</h2>" +
+				"<h3>ISBN: " + ISBN + "</h3>" +
+				"<h3>Copies: " + copies + "</h3><br>";
+	}
+}

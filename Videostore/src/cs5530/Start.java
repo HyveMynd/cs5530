@@ -180,7 +180,7 @@ public class Start {
 	            	 else if (c==9)
 	            	 {
 	            		 int fid = Integer.parseInt(enterData("Please enter the Feedback Id of the feedback you would like to rate:", in));
-	            		 int rating  = Integer.parseInt(enterData("Please enter a rating between 0-2 on how useful the rating is, 0 is least useful:", in));
+	            		 String rating  = enterData("Please enter a rating between 0-2 on how useful the rating is, 0 is least useful:", in);
 	            		 System.out.println(Options.addRating(con.stmt, user.id, fid, rating));
 	            	 }
 	            	 else if (c==10)
@@ -198,7 +198,7 @@ public class Start {
 	            		 		"Year = 1\n" +
 	            		 		"Average Feedback Score = 2\n" +
 	            		 		"Average Trusted Feedback Score = 3", in));
-	            		 System.out.println(Options.movieSearch(con.stmt, search, order));
+	            		 System.out.println(Options.movieSearch(con.stmt, order, "", "", "", "", "", "", ""));
 	            	 }
 	            	 else if (c==12)
 	            	 {

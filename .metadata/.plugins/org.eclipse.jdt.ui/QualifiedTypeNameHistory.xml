@@ -27,7 +27,6 @@
 <fullyQualifiedTypeName name="cs5530.User"/>
 <fullyQualifiedTypeName name="databaseOps.Select"/>
 <fullyQualifiedTypeName name="databaseOps.OP"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="models.Inventory"/>
 <fullyQualifiedTypeName name="models.Feedback"/>
 <fullyQualifiedTypeName name="models.Rates"/>
@@ -35,4 +34,5 @@
 <fullyQualifiedTypeName name="cs5530.Options"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="databaseOps.QueryResult"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 </qualifiedTypeNameHistroy>

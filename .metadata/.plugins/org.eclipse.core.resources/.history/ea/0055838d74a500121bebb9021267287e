@@ -1,0 +1,52 @@
+<%@ page contentType="text/html; charset=UTF-8" language="java" import="java.sql.*" errorPage="" %>
+<%@ page language="java" import="cs5530.*" %>
+<%@ page language="java" import="databaseOps.*" %>
+<%@ page language="java" import="dbModels.*" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="jquery.cookie.js"></script>
+<title>User Record</title>
+</head>
+<body>
+<%
+Connector con = new Connector();
+String submitted = request.getParameter("submitted");
+if( submitted == null ){
+%>
+<h2>Enter information for the video to rate:</h2>
+<form method=get action=mostuseful.jsp>
+	<input type="text" name=isbn placeholder="ISBN" />
+   	<input type="text" name="count" placeholder="Results to Display" />
+   	<h5>Search by:</h5>
+   	<input type="radio" name="search" value="1" />Year<br>
+	<input type="radio" name="search" value="2" />Average Feedback Score<br>
+	<input type="radio" name="search" value="3" />Search By Year<br>
+    <input type="button" value="Submit" onclick="submitForm()" />
+    <input type="hidden" name=submitted id=formSub />
+</form>
+<%
+} else {
+	 System.out.println("Please search in the following comma separated order, 'Actor/Director/Title/Rating' and use 'AND/OR' to filter your results:");
+	 String search = enterData("Example: 'johnny depp, or jj abrams, and pirates, and r'\n" +
+	 		"commas should still be used for empty search options: ,,,pg-13\n", in);
+	 int order = Integer.parseInt(enterData("How would you like your data sorted?\n" +
+	 		"Year = 1\n" +
+	 		"Average Feedback Score = 2\n" +
+	 		"Average Trusted Feedback Score = 3", in));
+	 System.out.println(Options.movieSearch(con.stmt, search, order));
+	con.closeConnection();
+	out.println("<a href=options.jsp >Go To Options Page</a>");
+}
+%>
+<script>
+	function submitForm(){
+		$("#formSub").val("yes");
+		$("form").submit();
+	}
+</script>
+</body>
+</html>
